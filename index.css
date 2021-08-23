@@ -121,7 +121,7 @@ main img {
   .hero-section {
     background: url("./images/hero-desktop.jpg");
     height: auto;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 0 !important;
   }
