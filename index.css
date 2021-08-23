@@ -95,15 +95,17 @@ main img {
 @media screen and (min-width: 1440px) {
   body {
     display: grid;
-    grid-template-columns: 6fr 3fr;
-    grid-template-rows: 1fr 9fr;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 28.275% 71.625%;
     grid-template-areas:
       "header    section"
       "container section";
+    height: 100vh;
     max-height: 100vh;
     background: url("./images/bg-pattern-desktop.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100vw;
   }
 
   header {
@@ -119,7 +121,7 @@ main img {
   .hero-section {
     background: url("./images/hero-desktop.jpg");
     height: auto;
-    background-size: auto;
+    background-size: contain;
     background-repeat: no-repeat;
     margin-bottom: 0 !important;
   }
@@ -138,6 +140,10 @@ main img {
 
   main > h1,
   main > h1 > span {
-    font-size: 3rem !important;
+    font-size: 3.25rem !important;
+  }
+
+  .input-holder img {
+    padding: 0.75rem 2.3rem;
   }
 }
