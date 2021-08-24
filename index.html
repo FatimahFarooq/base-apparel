@@ -54,8 +54,22 @@
             name="email"
             placeholder="Email Address"
           />
-          <img src="./images/icon-arrow.svg" alt="icon arrow" />
+          <img
+            id="icon-error"
+            class="icon-error hidden"
+            src="./images/icon-error.svg"
+            alt="icon error"
+          />
+          <img
+            class="icon-arrow"
+            src="./images/icon-arrow.svg"
+            alt="icon arrow"
+            onclick="validateEmail()"
+          />
         </div>
+        <p id="invalid-err" class="invalid-input hidden">
+          Please provide a valid email
+        </p>
       </main>
 
       <!-- <footer>
@@ -67,5 +81,36 @@
         </p>
       </footer> -->
     </div>
+
+    <script>
+      const validateEmail = () => {
+        var email_field = document.getElementById("email");
+        var icon_err = document.getElementById("icon-error");
+        var invalid_err = document.getElementById("invalid-err");
+        var email = document.getElementById("email").value;
+
+        if (email != null) {
+          if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+            console.log("email verified");
+            email_field.classList.remove("input-error");
+            icon_err.classList.add("hidden");
+            invalid_err.classList.add("hidden");
+          } else {
+            console.log("email not verified");
+            email_field.classList.add("input-error");
+            icon_err.classList.remove("hidden");
+            invalid_err.classList.remove("hidden");
+          }
+        }
+      };
+
+      var input = document.getElementById("email");
+      input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          validateEmail();
+        }
+      });
+    </script>
   </body>
 </html>
